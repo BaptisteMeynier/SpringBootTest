@@ -1,5 +1,6 @@
 package org.spring.boot.library.rest;
 
+
 import java.util.List;
 
 import org.spring.boot.library.model.Book;
@@ -18,14 +19,14 @@ public class LibraryControler {
 	@Autowired
 	private BookService bookService;
 
-	@RequestMapping(value = "/",	method = RequestMethod.GET)
-	public @ResponseBody List<Book> findAll() {
-		return bookService.findAll();
-	}
-
 	@RequestMapping(value = "/{name}",	method = RequestMethod.GET)
 	public Book findByName(@PathVariable("name") final String name) {
 		return bookService.findByName(name).get();
+	}
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public @ResponseBody List<Book> findAll() {
+		return bookService.findAll();
 	}
 
 }

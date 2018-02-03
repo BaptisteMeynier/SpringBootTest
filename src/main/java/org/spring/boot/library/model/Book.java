@@ -38,6 +38,13 @@ public class Book {
 
 	public void setPublication(int publication) {
 		this.publication = publication;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [name=" + name + ", price=" + price + ", publication=" + publication + "]";
 	}	
 
+	
+	
 }
